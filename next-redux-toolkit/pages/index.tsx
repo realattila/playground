@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "src/hook/store";
 import { decrement, increment } from "store/counter";
@@ -21,10 +22,11 @@ const Home: NextPage = () => {
     dispatch(requestToGetdata());
   }, []);
 
-  console.log({ data });
-
   return (
     <div>
+      <div>
+        <code>{JSON.stringify(data)}</code>
+      </div>
       <div>this is shity Value {counter.value}</div>
       <div>
         <button onClick={handleIncreaceValue}>Increace Value</button>
